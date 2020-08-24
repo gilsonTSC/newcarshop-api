@@ -11,6 +11,10 @@ import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 
+import com.gilsontsc.newcarshopbatch.dto.CarroDto;
+import com.gilsontsc.newcarshopbatch.utils.CsvFileUtils;
+import com.gilsontsc.newcarshopbatch.validate.CarroValidate;
+
 public class CarroValidadeTasklet implements Tasklet, StepExecutionListener {
 
 	private List<CarroDto> carroDtoList;
@@ -47,7 +51,7 @@ public class CarroValidadeTasklet implements Tasklet, StepExecutionListener {
 			carroDto = csvIn.read();
 		}
 		
-		csvIn.closereader();
+		csvIn.closeReader();
 		
 		this.carroDtoList = CarroValidate.validate(this.carroDtoList);
 		

@@ -1,5 +1,9 @@
 package com.gilsontsc.newcarshopbatch.configuration;
 
+import javax.batch.api.chunk.ItemProcessor;
+import javax.batch.api.chunk.ItemReader;
+import javax.batch.api.chunk.ItemWriter;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -8,6 +12,10 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.gilsontsc.newcarshopbatch.configuration.tasklet.CarroValidadeTasklet;
+import com.gilsontsc.newcarshopbatch.dto.CarroDto;
+import com.gilsontsc.newcarshopbatch.model.Carro;
 
 @Configuration
 @EnableBatchProcessing
@@ -33,7 +41,7 @@ public class BatchConfiguration {
 	@Bean
 	private Step carroValidadeTaskStep() {
 		return this.stepBuilderFactory.get("carroValidadetaskletStep")
-				.tasklet(new CarroValidadeTasklet("Carros-import"))
+				.tasklet(new CarroValidadeTasklet(null, "Carros-import"))
 				.build();
 	}
 	
