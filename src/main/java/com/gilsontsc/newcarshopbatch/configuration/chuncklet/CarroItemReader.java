@@ -1,4 +1,4 @@
-package com.gilsontsc.newcarshopbatch.configuration.chunklet;
+package com.gilsontsc.newcarshopbatch.configuration.chuncklet;
 
 import java.util.Iterator;
 import java.util.List;
