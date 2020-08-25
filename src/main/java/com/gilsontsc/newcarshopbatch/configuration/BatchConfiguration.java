@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.gilsontsc.newcarshopbatch.configuration.chuncklet.CarroItemProcessor;
+import com.gilsontsc.newcarshopbatch.configuration.chuncklet.CarroItemReader;
+import com.gilsontsc.newcarshopbatch.configuration.chuncklet.CarroItemWriter;
 import com.gilsontsc.newcarshopbatch.configuration.tasklet.CarroValidadeTasklet;
 import com.gilsontsc.newcarshopbatch.dto.CarroDto;
 import com.gilsontsc.newcarshopbatch.model.Carro;
