@@ -15,15 +15,14 @@ import com.gilsontsc.newcarshopbatch.dto.CarroDto;
 import com.gilsontsc.newcarshopbatch.utils.CsvFileUtils;
 import com.gilsontsc.newcarshopbatch.validate.CarroValidate;
 
-public class CarroValidadeTasklet implements Tasklet, StepExecutionListener {
+public class CarroValidateTasklet implements Tasklet, StepExecutionListener {
 
 	private List<CarroDto> carroDtoList;
 	private String fileName;
 	
-	public CarroValidadeTasklet() {}
+	public CarroValidateTasklet() {}
 	
-	public CarroValidadeTasklet(List<CarroDto> carroDtoList, String fileName) {
-		this.carroDtoList = carroDtoList;
+	public CarroValidateTasklet(String fileName) {
 		this.fileName = fileName;
 	}
 
